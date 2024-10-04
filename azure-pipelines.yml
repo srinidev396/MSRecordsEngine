@@ -22,10 +22,10 @@ stages:
     - script: dotnet restore MSRecordsEngine.csproj
       displayName: 'Restore dependencies'
 
-    - script: dotnet build --configuration Release
+    - script: dotnet build MSRecordsEngine.csproj --configuration Release
       displayName: 'Build application'
 
-    - script: dotnet publish --configuration Release --output $(Build.ArtifactStagingDirectory)
+    - script: dotnet publish MSRecordsEngine.csproj --configuration Release --output $(Build.ArtifactStagingDirectory)
       displayName: 'Publish Application'
     
     - task: PublishBuildArtifacts@1
